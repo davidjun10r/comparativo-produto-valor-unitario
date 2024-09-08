@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+        <h3>Produto1</h3>
+        Preço: <input type="text" name="preco1" id="preco1" value="0"/>
+        Quantidade: <input type="text" name="qnt1" id="qnt1" value="0" />
+        Total: <input type="text" name="total" id="total" value="" readonly="readonly" />
+        <p id="resultado">Resultado:</p>
+            
+        <h3>Produto2</h3>
+        Preço: <input type="text" name="preco2" id="preco2" value="0"/>
+        Quantidade: <input type="text" name="qnt2" id="qnt2" value="0" />
+        Total: <input type="text" name="total2" id="total2" readonly="readonly" /><br><br>
+        <p id="resultado2">Resultado:</p>
+
+        <button onclick="obterValor()">Calcular</button>
+      </form>
+
+<script>
+
+function obterValor() {
+
+//Produto 1
+
+var preco1 = document.getElementById('preco1').value;
+var qnt1 = document.getElementById('qnt1').value;
+var res1 = preco1/qnt1;
+var resultado = res1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+document.getElementById('total').value = resultado;
+document.getElementById("resultado").innerHTML = "O valor da unidade do Produto 1 = " + resultado;
+
+//Produto 2
+
+var preco2 = document.getElementById('preco2').value;
+var qnt2 = document.getElementById('qnt2').value;
+var res2 = preco2/qnt2;
+var resultado2 = res2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
+document.getElementById('total2').value = resultado2;
+document.getElementById("resultado2").innerHTML = "O valor da unidade do Produto 2 = " + resultado2;
+
+}
+
+</script>
+
+</body>
+</html>
