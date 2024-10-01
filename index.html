@@ -29,7 +29,10 @@ function obterValor() {
 var preco1 = document.getElementById('preco1').value;
 var qnt1 = document.getElementById('qnt1').value;
 var res1 = preco1/qnt1;
-var resultado = res1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+var resultado = res1.toLocaleString('pt-br',{minimumFractionDigits:4});
+  
+// com R$ 
+// var resultado = res1.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
 document.getElementById('total').value = resultado;
 document.getElementById("resultado").innerHTML = "O valor da unidade do Produto 1 = " + resultado;
@@ -39,7 +42,10 @@ document.getElementById("resultado").innerHTML = "O valor da unidade do Produto 
 var preco2 = document.getElementById('preco2').value;
 var qnt2 = document.getElementById('qnt2').value;
 var res2 = preco2/qnt2;
-var resultado2 = res2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+var resultado2 = res2.toLocaleString('pt-br',{minimumFractionDigits:4});
+
+// com R$
+//var resultado2 = res2.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
 document.getElementById('total2').value = resultado2;
 document.getElementById("resultado2").innerHTML = "O valor da unidade do Produto 2 = " + resultado2;
