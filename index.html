@@ -1,78 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-    <title>Comparativo de Preço dos Produtos</title>
+    <title>Document</title>
 </head>
+
 <body>
 
-    <div class="columns is-mobile">
-        <div class="column is-half is-offset-one-quarter">
 
-            <p class="title is-4 has-text-centered">Comparativo de Preço dos Produtos</p>
+
+    <p class="title is-4 has-text-centered">Comparativo de Preço dos Produtos</p>
+
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column is-is-5">
 
             <div class="card">
                 <div class="card-content">
                     <div class="content">
                         <p class="title is-4">Produto 1</p>
+
                         <div class="field">
                             <label class="label">Quantidade</label>
                             <div class="control">
                                 <input class="input" type="text" id="quantidade1" oninput="obterValor()">
                             </div>
                         </div>
-    
+
                         <div class="field">
                             <label class="label">Preço</label>
                             <div class="control">
                                 <input class="input" type="text" id="preco1" oninput="obterValor()">
                             </div>
                         </div>
-    
+
                         <div class="field">
                             <label class="label">Valor Unitário</label>
                             <div class="control">
                                 <input class="input" type="text" id="valor1" disabled />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="column is-is-5">
 
             <div class="card">
                 <div class="card-content">
                     <div class="content">
                         <p class="title is-4">Produto 2</p>
+
                         <div class="field">
                             <label class="label">Quantidade</label>
                             <div class="control">
                                 <input class="input" type="text" id="quantidade2" oninput="obterValor()">
                             </div>
                         </div>
-    
+
                         <div class="field">
                             <label class="label">Preço</label>
                             <div class="control">
                                 <input class="input" type="text" id="preco2" oninput="obterValor()">
                             </div>
                         </div>
-    
+
                         <div class="field">
                             <label class="label">Valor Unitário</label>
                             <div class="control">
                                 <input class="input" type="text" id="valor2" disabled />
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="column"></div>
+    </div>
+    
 
+
+    <div class="columns">
+        <div class="column"></div>
+        <div class="column is-is-10">
             <div class="card">
                 <div class="card-content">
                     <div class="content">
-                        <p class="title is-4">Comprar o Prouto:</p>
+                        <p class="title is-4">Comprar o Produto:</p>
                         <div class="field">
                             <div class="control">
                                 <input class="input" type="text" id="escolha" disabled />
@@ -81,9 +101,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
+        <div class="column"></div>
     </div>
+
+   
 
     <script>
         function obterValor() {
