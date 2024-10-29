@@ -1,0 +1,20 @@
+{
+  "name": "Comparativo de Preço dos Produtos",
+  "short_name": "Compara Preço",
+  "start_url": "/comparativo-produto-valor-unitario/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3273dc",
+  "description": "Aplicativo para comparar preços de produtos.",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "512x512"
+
+    }
+  ]
+}

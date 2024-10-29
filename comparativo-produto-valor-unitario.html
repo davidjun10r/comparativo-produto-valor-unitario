@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Comparativo de Preço dos Produtos</title>
+    <style>
+        @media screen and (max-width: 768px) {
+            .is-half-mobile {
+                width: 50% !important;
+                margin: 0 !important;
+            }
+            .mobile-container {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <p class="title is-4 has-text-centered">Comparativo de Preço dos Produtos</p>
+
+    <div class="mobile-container">
+        <div class="columns is-mobile is-centered">
+            <div class="column is-half-mobile">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <p class="title is-4">Produto 1</p>
+
+                            <div class="field">
+                                <label class="label">Quantidade</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="quantidade1" oninput="obterValor()">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Preço</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="preco1" oninput="obterValor()">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Valor Unitário</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="valor1" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-half-mobile">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <p class="title is-4">Produto 2</p>
+
+                            <div class="field">
+                                <label class="label">Quantidade</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="quantidade2" oninput="obterValor()">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Preço</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="preco2" oninput="obterValor()">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Valor Unitário</label>
+                                <div class="control">
+                                    <input class="input" type="text" id="valor2" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-mobile is-centered">
+            <div class="column is-full-mobile">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <p class="title is-4">Comprar o Produto:</p>
+                            <div class="field">
+                                <div class="control">
+                                    <input class="input" type="text" id="escolha" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function obterValor() {
+            function parseNumber(value) {
+                return parseFloat(value.replace(',', '.') || '0');
+            }
+            
+            let quantidade1 = parseNumber(document.getElementById('quantidade1').value);
+            let preco1 = parseNumber(document.getElementById('preco1').value);
+            let quantidade2 = parseNumber(document.getElementById('quantidade2').value);
+            let preco2 = parseNumber(document.getElementById('preco2').value);
+        
+            let valor1 = quantidade1 !== 0 ? preco1 / quantidade1 : 0;
+            let valor2 = quantidade2 !== 0 ? preco2 / quantidade2 : 0;
+            let menor = Math.min(valor1, valor2);
+            let escolha = menor === valor1 ? "Produto 1" : "Produto 2";
+
+            document.getElementById('valor1').value = valor1.toFixed(7);
+            document.getElementById('valor2').value = valor2.toFixed(7);
+            document.getElementById('escolha').value = escolha;
+        }
+    </script>
+</body>
+</html>
